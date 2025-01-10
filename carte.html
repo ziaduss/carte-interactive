@@ -30,7 +30,7 @@
         }).addTo(map);
 
         // Charger les données JSON des clubs de football
-        $.getJSON('assets/clubs.json', function(data) {  // Charger clubs.json depuis le dossier assets
+        $.getJSON('clubs.json', function(data) {  // Charger clubs.json depuis le dossier assets
             // Parcours des clubs dans le fichier JSON
             data.forEach(function(club) {
                 // Création d'un marqueur pour chaque club
