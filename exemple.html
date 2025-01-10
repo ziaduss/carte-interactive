@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive des Clubs de Ligue 1 Algérienne</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Style de la carte */
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Script pour charger la carte et les données -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Initialisation de la carte avec des options personnalisées
+        var map = L.map('map', {
+            center: [28.0339, 1.6596], // Centrer sur l'Algérie
+            zoom: 5,  // Niveau de zoom initial
+            minZoom: 3, // Zoom minimum autorisé pour voir l'ensemble de la carte
+            maxZoom: 18, // Limite du zoom maximal
+            maxBounds: [
+                [-90, -180], // Limites sud-ouest (lat, lon)
+                [90, 180]    // Limites nord-est (lat, lon)
+            ], // Permet de voir toute la carte du monde
+            maxBoundsViscosity: 1.0, // Permet de conserver la carte même aux bords
+            noWrap: true // Empêche la répétition de la carte
+        });
+
+        // Ajouter un fond de carte avec des frontières et noms des pays visibles (Stamen Toner)
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; <a href="https://www.esri.com/en-us/home">Esri</a>'
+}).addTo(map);
+
+
+        // Ajouter les frontières des pays en utilisant GeoJSON
+        $.getJSON('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json', function(data) {
+            // Ajouter une couche GeoJSON avec les frontières des pays
+            L.geoJSON(data, {
+                style: {
+                    weight: 1,
+                    color: '#000', // couleur des frontières
+                    opacity: 1,
+                    fillOpacity: 0
+                },
+                // Fonction pour ajouter un label avec le nom du pays
+                onEachFeature: function (feature, layer) {
+                    if (feature.properties && feature.properties.name) {
+                        layer.bindTooltip(feature.properties.name, {permanent: true, direction: 'center', opacity: 0.8});
+                    }
+                },
+                
+                
+            }).addTo(map);
+        });
+
+        // Charger les données JSON des clubs (assume que clubs.json existe)
+        $.getJSON('clubs.json', function(data) {  
+            // Parcours des clubs dans le fichier JSON
+            data.forEach(function(club) {
+                // Création d'un marqueur pour chaque club
+                var marker = L.marker([club.latitude, club.longitude]).addTo(map);
+
+                // Ajouter un popup avec les informations du club
+                marker.bindPopup("<b>" + club.club + "</b><br><img src='" + club.logo + "' alt='Logo' width='50'><br><a href='" + club.siteWeb + "' target='_blank'>Site Web</a>");
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive des Clubs de Ligue 1 Algérienne</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Style de la carte */
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Script pour charger la carte et les données -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Initialisation de la carte avec des options personnalisées
+        var map = L.map('map', {
+            center: [28.0339, 1.6596], // Centrer sur l'Algérie
+            zoom: 5,  // Niveau de zoom initial
+            minZoom: 3, // Zoom minimum autorisé pour voir l'ensemble de la carte
+            maxZoom: 18, // Limite du zoom maximal
+            maxBounds: [
+                [-90, -180], // Limites sud-ouest (lat, lon)
+                [90, 180]    // Limites nord-est (lat, lon)
+            ], // Permet de voir toute la carte du monde
+            maxBoundsViscosity: 1.0, // Permet de conserver la carte même aux bords
+            noWrap: true // Empêche la répétition de la carte
+        });
+
+        // Ajouter un fond de carte avec des frontières et noms des pays visibles (Stamen Toner)
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; <a href="https://www.esri.com/en-us/home">Esri</a>'
+}).addTo(map);
+
+
+        // Ajouter les frontières des pays en utilisant GeoJSON
+        $.getJSON('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json', function(data) {
+            // Ajouter une couche GeoJSON avec les frontières des pays
+            L.geoJSON(data, {
+                style: {
+                    weight: 1,
+                    color: '#000', // couleur des frontières
+                    opacity: 1,
+                    fillOpacity: 0
+                },
+                // Fonction pour ajouter un label avec le nom du pays
+                onEachFeature: function (feature, layer) {
+                    if (feature.properties && feature.properties.name) {
+                        layer.bindTooltip(feature.properties.name, {permanent: true, direction: 'center', opacity: 0.5});
+                    }
+                },
+                
+                
+            }).addTo(map);
+        });
+
+        // Charger les données JSON des clubs (assume que clubs.json existe)
+        $.getJSON('clubs.json', function(data) {  
+            // Parcours des clubs dans le fichier JSON
+            data.forEach(function(club) {
+                // Création d'un marqueur pour chaque club
+                var marker = L.marker([club.latitude, club.longitude]).addTo(map);
+
+                // Ajouter un popup avec les informations du club
+                marker.bindPopup("<b>" + club.club + "</b><br><img src='" + club.logo + "' alt='Logo' width='50'><br><a href='" + club.siteWeb + "' target='_blank'>Site Web</a>");
+            });
+        });
+    </script>
+</body>
+</html>
