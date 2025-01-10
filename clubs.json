@@ -4,98 +4,160 @@
         "localisation": "Chlef, Algérie",
         "latitude": 36.1667,
         "longitude": 1.3333,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/77/ASO_Chlef_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/77/ASO_Chlef_logo.png",
+        "siteWeb": "https://www.asochlef.dz"
     },
     {
         "club": "CR Belouizdad",
         "localisation": "Alger, Algérie",
         "latitude": 36.7532,
         "longitude": 3.0435,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7f/CR_Belouizdad_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7f/CR_Belouizdad_logo.png",
+        "siteWeb": "https://www.crbelouizdad.dz"
     },
     {
         "club": "CS Constantine",
         "localisation": "Constantine, Algérie",
         "latitude": 36.3650,
         "longitude": 6.6140,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7a/CS_Constantine_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7a/CS_Constantine_logo.png",
+        "siteWeb": "https://www.csconstantine.dz"
     },
     {
         "club": "ES Sétif",
         "localisation": "Sétif, Algérie",
         "latitude": 36.1917,
         "longitude": 5.4167,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ES_Sétif_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ES_Sétif_logo.png",
+        "siteWeb": "https://www.ess.dz"
     },
     {
         "club": "JS Kabylie",
         "localisation": "Tizi Ouzou, Algérie",
         "latitude": 36.7167,
         "longitude": 4.0333,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9f/JS_Kabylie_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9f/JS_Kabylie_logo.png",
+        "siteWeb": "https://www.jsk.dz"
     },
     {
         "club": "JS Saoura",
         "localisation": "Bechar, Algérie",
         "latitude": 31.6167,
         "longitude": -2.2167,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/JS_Saoura_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/JS_Saoura_logo.png",
+        "siteWeb": "https://www.jssaoura.dz"
     },
     {
         "club": "MC Alger",
         "localisation": "Alger, Algérie",
         "latitude": 36.7540,
         "longitude": 3.0438,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a0/MC_Alger_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a0/MC_Alger_logo.png",
+        "siteWeb": "https://www.mc-alger.dz"
     },
     {
         "club": "MC Oran",
         "localisation": "Oran, Algérie",
         "latitude": 35.6970,
         "longitude": -0.6333,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/MC_Oran_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/MC_Oran_logo.png",
+        "siteWeb": "https://www.mcoran.dz"
     },
     {
         "club": "NC Magra",
         "localisation": "Magra, Algérie",
         "latitude": 35.4167,
         "longitude": 5.4167,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/NC_Magra_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/NC_Magra_logo.png",
+        "siteWeb": "https://www.ncmagra.dz"
     },
     {
         "club": "Paradou AC",
         "localisation": "Alger, Algérie",
         "latitude": 36.7535,
         "longitude": 3.0442,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Paradou_AC_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Paradou_AC_logo.png",
+        "siteWeb": "https://www.paradouac.dz"
     },
     {
         "club": "RC Arbaâ",
         "localisation": "Arbaâ, Algérie",
         "latitude": 36.2869,
         "longitude": 3.3572,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e7/RC_Arbaâ_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e7/RC_Arbaâ_logo.png",
+        "siteWeb": "https://www.rc-arbaa.dz"
     },
     {
         "club": "USM Alger",
         "localisation": "Alger, Algérie",
         "latitude": 36.7529,
         "longitude": 3.0425,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/USM_Alger_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/USM_Alger_logo.png",
+        "siteWeb": "https://www.usma.dz"
     },
     {
         "club": "USM Blida",
         "localisation": "Blida, Algérie",
         "latitude": 36.4756,
         "longitude": 2.8328,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fd/USM_Blida_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fd/USM_Blida_logo.png",
+        "siteWeb": "https://www.usmblida.dz"
     },
     {
         "club": "WA Tlemcen",
         "localisation": "Tlemcen, Algérie",
         "latitude": 34.8886,
         "longitude": -1.3167,
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1c/WA_Tlemcen_logo.png"
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1c/WA_Tlemcen_logo.png",
+        "siteWeb": "https://www.watlemcen.dz"
+    },
+    {
+        "club": "AS Aïn M'lila",
+        "localisation": "Aïn M'lila, Algérie",
+        "latitude": 36.2625,
+        "longitude": 6.2519,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a1/AS_Ain_Mlila_logo.png",
+        "siteWeb": "https://www.asaindmila.dz"
+    },
+    {
+        "club": "O Médéa",
+        "localisation": "Médéa, Algérie",
+        "latitude": 36.2667,
+        "longitude": 2.7667,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/12/OMedéa_logo.png",
+        "siteWeb": "https://www.omedea.dz"
+    },
+    {
+        "club": "US Biskra",
+        "localisation": "Biskra, Algérie",
+        "latitude": 34.8500,
+        "longitude": 5.7333,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1e/US_Biskra_logo.png",
+        "siteWeb": "https://www.usbiskra.dz"
+    },
+    {
+        "club": "RC Relizane",
+        "localisation": "Relizane, Algérie",
+        "latitude": 35.7486,
+        "longitude": 0.5547,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0d/RC_Relizane_logo.png",
+        "siteWeb": "https://www.rcrelizane.dz"
+    },
+    {
+        "club": "MC El Eulma",
+        "localisation": "El Eulma, Algérie",
+        "latitude": 36.2919,
+        "longitude": 5.8472,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3e/MC_El_Eulma_logo.png",
+        "siteWeb": "https://www.mceulema.dz"
+    },
+    {
+        "club": "NA Hussein Dey",
+        "localisation": "Alger, Algérie",
+        "latitude": 36.7592,
+        "longitude": 3.0478,
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0b/NA_Hussein_Dey_logo.png",
+        "siteWeb": "https://www.nahd.dz"
     }
   ]
   
