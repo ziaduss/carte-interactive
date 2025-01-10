@@ -25,17 +25,27 @@
 
     <script>
         // Initialisation du globe Cesium
+        // const viewer = new Cesium.Viewer('globe', {
+        //     imageryProvider: new Cesium.BingMapsImageryProvider({
+        //         url: 'https://dev.virtualearth.net',
+        //         key: 'AqUaxxxxxx' // Remplace par ta clé Bing Maps API si nécessaire
+        //     }),
+        //     baseLayerPicker: false, // Désactive la sélection de couches
+        //     geocoder: false,       // Désactive le champ de recherche
+        //     animation: false,      // Désactive l'animation temporelle
+        //     timeline: false,       // Désactive la timeline
+        //     sceneModePicker: false // Désactive le mode 2D/3D
+        // });
         const viewer = new Cesium.Viewer('globe', {
-            imageryProvider: new Cesium.BingMapsImageryProvider({
-                url: 'https://dev.virtualearth.net',
-                key: 'AqUaxxxxxx' // Remplace par ta clé Bing Maps API si nécessaire
-            }),
-            baseLayerPicker: false, // Désactive la sélection de couches
-            geocoder: false,       // Désactive le champ de recherche
-            animation: false,      // Désactive l'animation temporelle
-            timeline: false,       // Désactive la timeline
-            sceneModePicker: false // Désactive le mode 2D/3D
-        });
+    imageryProvider: new Cesium.OpenStreetMapImageryProvider({
+        url: 'https://a.tile.openstreetmap.org/'
+    }),
+    baseLayerPicker: false, // Désactive la sélection de couches
+    geocoder: false,       // Désactive le champ de recherche
+    animation: false,      // Désactive l'animation temporelle
+    timeline: false,       // Désactive la timeline
+    sceneModePicker: false // Désactive le mode 2D/3D
+});
 
         // Charger les données JSON des clubs
         $.getJSON('clubs.json', function(data) {
