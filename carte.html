@@ -3,43 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte Interactive des Clubs de Ligue 1 Algérienne</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Globe Interactif des Clubs de Ligue 1 Algérienne</title>
+    <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Widgets/widgets.css" />
     <style>
-        /* Style de la carte */
-        #map {
+        /* Style du globe */
+        #globe {
             width: 100%;
             height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <div id="map"></div>
+    <div id="globe"></div>
 
-    <!-- Script pour charger la carte et les données -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Script Cesium -->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Cesium.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+
     <script>
-        // Initialisation de la carte
-        var map = L.map('map').setView([28.0339, 1.6596], 5); // Centrer la carte sur l'Algérie
+        // Initialisation du globe Cesium
+        const viewer = new Cesium.Viewer('globe', {
+            imageryProvider: new Cesium.BingMapsImageryProvider({
+                url: 'https://dev.virtualearth.net',
+                key: 'AqUaxxxxxx' // Remplace par ta clé Bing Maps API si nécessaire
+            }),
+            baseLayerPicker: false, // Désactive la sélection de couches
+            geocoder: false,       // Désactive le champ de recherche
+            animation: false,      // Désactive l'animation temporelle
+            timeline: false,       // Désactive la timeline
+            sceneModePicker: false // Désactive le mode 2D/3D
+        });
 
-        // Ajouter un fond de carte (OpenStreetMap)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Charger les données JSON des clubs de football
-        $.getJSON('clubs.json', function(data) {  // Charger clubs.json depuis le fichier json
-            // Parcours des clubs dans le fichier JSON
+        // Charger les données JSON des clubs
+        $.getJSON('clubs.json', function(data) {
             data.forEach(function(club) {
-                // Création d'un marqueur pour chaque club
-                var marker = L.marker([club.latitude, club.longitude]).addTo(map);
-
-                // Ajouter un popup avec les informations du club
-                marker.bindPopup("<b>" + club.club + "</b><br><img src='" + club.logo + "' alt='Logo' width='50'><br><a href='" + club.siteWeb + "' target='_blank'>Site Web</a>");
+                // Ajouter un point pour chaque club
+                viewer.entities.add({
+                    position: Cesium.Cartesian3.fromDegrees(club.longitude, club.latitude),
+                    point: {
+                        pixelSize: 10,
+                        color: Cesium.Color.RED
+                    },
+                    label: {
+                        text: club.club,
+                        font: '14pt sans-serif',
+                        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+                        pixelOffset: new Cesium.Cartesian2(0, -10)
+                    },
+                    description: `
+                        <div style="text-align: center;">
+                            <img src="${club.logo}" alt="Logo" style="width:50px;">
+                            <p><a href="${club.siteWeb}" target="_blank">Site Web</a></p>
+                        </div>
+                    `
+                });
             });
         });
+
+        // Centrer la vue sur l'Algérie
+        viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(1.6596, 28.0339, 5000000) // Zoom ajusté
+        });
+
+        // Activer le zoom et les contrôles
+        viewer.scene.screenSpaceCameraController.enableZoom = true;
+        viewer.scene.screenSpaceCameraController.enableRotate = true;
     </script>
 </body>
 </html>
