@@ -22,7 +22,7 @@
     
     <script>
         // Initialisation de la carte
-        var map = L.map('map').setView([36.75, 3.058], 5); // Augmenter le niveau de zoom
+        var map = L.map('map').setView([36.75, 3.058], 6); // Centrer la carte sur l'Algérie
 
         // Ajouter un fond de carte (OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -30,15 +30,16 @@
         }).addTo(map);
 
         // Charger les données JSON des clubs de football
-        $.getJSON('clubs.json', function(data) {
-    data.forEach(function(club) {
-        var marker = L.marker([club.latitude, club.longitude]).addTo(map);
-        marker.bindPopup("<b>" + club.club + "</b><br><img src='" + club.logo + "' alt='Logo' width='50'><br><a href='" + club.siteWeb + "' target='_blank'>Site Web</a>");
-    });
-}).fail(function(jqxhr, textStatus, error) {
-    console.log("Erreur de récupération JSON : " + textStatus + ", " + error);
-});
+        $.getJSON('clubs.json', function(data) {  // Charger clubs.json depuis le fichier json
+            // Parcours des clubs dans le fichier JSON
+            data.forEach(function(club) {
+                // Création d'un marqueur pour chaque club
+                var marker = L.marker([club.latitude, club.longitude]).addTo(map);
 
+                // Ajouter un popup avec les informations du club
+                marker.bindPopup("<b>" + club.club + "</b><br><img src='" + club.logo + "' alt='Logo' width='50'><br><a href='" + club.siteWeb + "' target='_blank'>Site Web</a>");
+            });
+        });
     </script>
 </body>
 </html>
