@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Globe Interactif des Clubs de Ligue 1 Algérienne</title>
-    <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Widgets/widgets.css" />
+    <title>Carte Interactive des Clubs de Ligue 1 Algérienne</title>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
     <style>
         /* Style du globe */
         #globe {
@@ -19,38 +19,26 @@
 <body>
     <div id="globe"></div>
 
-    <!-- Script Cesium -->
+    <!-- Scripts Cesium et jQuery -->
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Cesium.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        // Initialisation du globe Cesium
-        // const viewer = new Cesium.Viewer('globe', {
-        //     imageryProvider: new Cesium.BingMapsImageryProvider({
-        //         url: 'https://dev.virtualearth.net',
-        //         key: 'AqUaxxxxxx' // Remplace par ta clé Bing Maps API si nécessaire
-        //     }),
-        //     baseLayerPicker: false, // Désactive la sélection de couches
-        //     geocoder: false,       // Désactive le champ de recherche
-        //     animation: false,      // Désactive l'animation temporelle
-        //     timeline: false,       // Désactive la timeline
-        //     sceneModePicker: false // Désactive le mode 2D/3D
-        // });
+        // Initialisation du globe Cesium avec les tuiles par défaut de la Terre
         const viewer = new Cesium.Viewer('globe', {
-    imageryProvider: new Cesium.OpenStreetMapImageryProvider({
-        url: 'https://a.tile.openstreetmap.org/'
-    }),
-    baseLayerPicker: false, // Désactive la sélection de couches
-    geocoder: false,       // Désactive le champ de recherche
-    animation: false,      // Désactive l'animation temporelle
-    timeline: false,       // Désactive la timeline
-    sceneModePicker: false // Désactive le mode 2D/3D
-});
+            imageryProvider: new Cesium.IonImageryProvider(),  // Utilise les tuiles de la Terre par défaut
+            terrainProvider: Cesium.createWorldTerrain(),      // Utilisation du terrain 3D
+            baseLayerPicker: false, // Désactive le sélecteur de couches
+            geocoder: false,       // Désactive le champ de recherche
+            animation: false,      // Désactive l'animation temporelle
+            timeline: false,       // Désactive la timeline
+            sceneModePicker: false // Désactive le mode 2D/3D
+        });
 
         // Charger les données JSON des clubs
         $.getJSON('clubs.json', function(data) {
             data.forEach(function(club) {
-                // Ajouter un point pour chaque club
+                // Ajouter un marqueur pour chaque club sur la carte 3D
                 viewer.entities.add({
                     position: Cesium.Cartesian3.fromDegrees(club.longitude, club.latitude),
                     point: {
@@ -73,14 +61,10 @@
             });
         });
 
-        // Centrer la vue sur l'Algérie
+        // Centrer la vue de la caméra sur l'Algérie (avec une hauteur d'altitude appropriée)
         viewer.camera.flyTo({
-            destination: Cesium.Cartesian3.fromDegrees(1.6596, 28.0339, 5000000) // Zoom ajusté
+            destination: Cesium.Cartesian3.fromDegrees(1.6596, 28.0339, 5000000) // Coordonnées pour l'Algérie
         });
-
-        // Activer le zoom et les contrôles
-        viewer.scene.screenSpaceCameraController.enableZoom = true;
-        viewer.scene.screenSpaceCameraController.enableRotate = true;
     </script>
 </body>
 </html>
