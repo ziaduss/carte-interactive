@@ -14,22 +14,14 @@
 
         /* Style général du tooltip */
         .country-tooltip {
-            background-color: transparent;
-            color: black;
+            background-color: #FF6347;
+            color: white;
             font-size: 14px;
             font-family: 'Arial', sans-serif;
             border-radius: 8px;
             padding: 5px 10px;
-            border: 1px solid #333; /* Ajout d'une bordure fine */
-            box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Ombre autour du tooltip */
-            transition: all 0.3s ease; /* Animation douce pour les transitions */
-        }
-
-        /* Style du tooltip lors du survol */
-        .leaflet-tooltip:hover {
-            background-color: #FF6347; /* Fond orange à survol */
-            color: white; /* Texte en blanc */
-            font-weight: bold; /* Texte en gras */
+            border: 1px solid #333;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
         }
     </style>
 </head>
@@ -41,72 +33,72 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        // Initialisation de la carte avec des options personnalisées
+        // Initialisation de la carte
         var map = L.map('map', {
             center: [28.0339, 1.6596], // Centrer sur l'Algérie
-            zoom: 5,  // Niveau de zoom initial
-            minZoom: 3, // Zoom minimum autorisé pour voir l'ensemble de la carte
-            maxZoom: 18, // Limite du zoom maximal
+            zoom: 5,
+            minZoom: 3,
+            maxZoom: 18,
             maxBounds: [
-                [-90, -180], // Limites sud-ouest (lat, lon)
-                [90, 180]    // Limites nord-est (lat, lon)
-            ], // Permet de voir toute la carte du monde
-            maxBoundsViscosity: 1.0, // Permet de conserver la carte même aux bords
-            noWrap: true // Empêche la répétition de la carte
+                [-90, -180],
+                [90, 180]
+            ],
+            maxBoundsViscosity: 1.0,
+            noWrap: true
         });
 
-        // Ajouter un fond de carte avec des frontières et noms des pays visibles (Stamen Toner)
+        // Ajouter un fond de carte
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: '&copy; <a href="https://www.esri.com/en-us/home">Esri</a>'
         }).addTo(map);
 
-        // Ajouter les frontières des pays en utilisant GeoJSON
+        // Charger les frontières des pays via GeoJSON
         $.getJSON('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json', function(data) {
-            // Ajouter une couche GeoJSON avec les frontières des pays
             L.geoJSON(data, {
                 style: {
                     weight: 1,
-                    color: '#000', // couleur des frontières
+                    color: '#000',
                     opacity: 1,
                     fillOpacity: 0
                 },
-                // Fonction pour ajouter un label avec le nom du pays
                 onEachFeature: function (feature, layer) {
                     if (feature.properties && feature.properties.name) {
-                        layer.bindTooltip(feature.properties.name, {
-                            permanent: true,
-                            direction: 'center',
-                            opacity: 0.8,
-                            className: 'country-tooltip' // Ajouter une classe CSS pour le style
-                        });
-
-                        // Ajouter un effet de survol pour le tooltip
                         layer.on({
                             mouseover: function(e) {
-                                var layer = e.target;
-                                layer.setStyle({
+                                var tooltip = L.tooltip({
+                                    direction: 'center',
+                                    className: 'country-tooltip'
+                                })
+                                .setContent(feature.properties.name)
+                                .setLatLng(e.latlng);
+                                e.target.bindTooltip(tooltip).openTooltip();
+
+                                // Style au survol
+                                e.target.setStyle({
                                     weight: 2,
-                                    color: '#FF6347', // Couleur de la bordure au survol
-                                    fillColor: '#FF6347', // Couleur de la bordure
+                                    color: '#FF6347',
+                                    fillColor: '#FF6347',
                                     fillOpacity: 0.1
                                 });
-                                // Modifier le style du tooltip au survol
-                                layer.getTooltip().getElement().style.backgroundColor = '#FF6347'; // Fond coloré
-                                layer.getTooltip().getElement().style.color = 'white'; // Texte en blanc
-                                layer.getTooltip().getElement().style.fontWeight = 'bold'; // Texte en gras
                             },
                             mouseout: function(e) {
-                                var layer = e.target;
-                                layer.setStyle({
+                                e.target.closeTooltip();
+                                e.target.unbindTooltip();
+                                e.target.setStyle({
                                     weight: 1,
-                                    color: '#000', // Réinitialiser la couleur des frontières
+                                    color: '#000',
                                     fillColor: '#000',
                                     fillOpacity: 0
                                 });
-                                // Réinitialiser le style du tooltip
-                                layer.getTooltip().getElement().style.backgroundColor = 'transparent'; // Fond transparent
-                                layer.getTooltip().getElement().style.color = 'black'; // Texte noir
-                                layer.getTooltip().getElement().style.fontWeight = 'normal'; // Texte normal
+                            },
+                            click: function(e) {
+                                var tooltip = L.tooltip({
+                                    direction: 'center',
+                                    className: 'country-tooltip'
+                                })
+                                .setContent(feature.properties.name)
+                                .setLatLng(e.latlng);
+                                e.target.bindTooltip(tooltip).openTooltip();
                             }
                         });
                     }
@@ -114,15 +106,15 @@
             }).addTo(map);
         });
 
-        // Charger les données JSON des clubs (assume que clubs.json existe)
+        // Charger les données JSON des clubs
         $.getJSON('clubs.json', function(data) {  
-            // Parcours des clubs dans le fichier JSON
             data.forEach(function(club) {
-                // Création d'un marqueur pour chaque club
                 var marker = L.marker([club.latitude, club.longitude]).addTo(map);
-
-                // Ajouter un popup avec les informations du club
-                marker.bindPopup("<b>" + club.club + "</b><br><img src='" + club.logo + "' alt='Logo' width='50'><br><a href='" + club.siteWeb + "' target='_blank'>Site Web</a>");
+                marker.bindPopup(
+                    "<b>" + club.club + "</b><br>" +
+                    "<img src='" + club.logo + "' alt='Logo' width='50'><br>" +
+                    "<a href='" + club.siteWeb + "' target='_blank'>Site Web</a>"
+                );
             });
         });
     </script>
