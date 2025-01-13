@@ -1,115 +1,261 @@
 [
-    {
-      "club": "JS Kabylie",
-      "localisation": "Stade du 1er Novembre 1954, Tizi Ouzou, Algérie",
-      "latitude": 36.7167,
-      "longitude": 4.0333,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9f/JS_Kabylie_logo.png"
-    },
-    {
-      "club": "Paradou AC",
-      "localisation": "Stade Omar Hamadi, Bologhine, Alger, Algérie",
-      "latitude": 36.8120,
-      "longitude": 3.0581,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Paradou_AC_logo.png"
-    },
-    {
-      "club": "MC Alger",
-      "localisation": "Stade Ali Ammar, Douera, Alger, Algérie",
-      "latitude": 36.6817,
-      "longitude": 2.9628,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a0/MC_Alger_logo.png"
-    },
-    {
-      "club": "ES Sétif",
-      "localisation": "Stade 8 Mai 1945, Sétif, Algérie",
-      "latitude": 36.1917,
-      "longitude": 5.4167,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ES_Sétif_logo.png"
-    },
-    {
-      "club": "USM Alger",
-      "localisation": "Stade Omar Hamadi, Bologhine, Alger, Algérie",
-      "latitude": 36.7430,
-      "longitude": 3.0780,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/USM_Alger_logo.png"
-    },
-    {
-      "club": "CS Constantine",
-      "localisation": "Stade Chahid-Hamlaoui, Constantine, Algérie",
-      "latitude": 36.3650,
-      "longitude": 6.6140,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7a/CS_Constantine_logo.png"
-    },
-    {
-      "club": "ASO Chlef",
-      "localisation": "Stade Mohamed Boumezrag, Chlef, Algérie",
-      "latitude": 36.1667,
-      "longitude": 1.3333,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/77/ASO_Chlef_logo.png"
-    },
-    {
-      "club": "USM Khenchela",
-      "localisation": "Stade Ahmed Benahmed, Khenchela, Algérie",
-      "latitude": 35.4358,
-      "longitude": 7.1433,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fd/USM_Khenchela_logo.png"
-    },
-    {
-      "club": "CR Belouizdad",
-      "localisation": "Stade du 20 Août 1955, Belouizdad, Alger, Algérie",
-      "latitude": 36.7489,
-      "longitude": 3.0731,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7f/CR_Belouizdad_logo.png"
-    },
-    {
-      "club": "MC Oran",
-      "localisation": "Stade Ahmed Zabana, Oran, Algérie",
-      "latitude": 35.6970,
-      "longitude": -0.6333,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/MC_Oran_logo.png"
-    },
-    {
-      "club": "OAkbou",
-      "localisation": "Stade d'Oakbou, Oakbou, Algérie",
-      "latitude": 36.3667,
-      "longitude": 4.2833,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/18/Oakbou_logo.png"
-    },
-    {
-      "club": "JS Saoura",
-      "localisation": "Stade du 20 Août 1955, Bechar, Algérie",
-      "latitude": 31.6167,
-      "longitude": -2.2167,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/JS_Saoura_logo.png"
-    },
-    {
-      "club": "NC Magra",
-      "localisation": "Stade de Magra, Magra, Algérie",
-      "latitude": 35.4167,
-      "longitude": 5.4167,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/NC_Magra_logo.png"
-    },
-    {
-      "club": "MC El Bayadh",
-      "localisation": "Stade de Bayadh, Bayadh, Algérie",
-      "latitude": 33.6667,
-      "longitude": -0.7667,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7f/MC_El_Bayadh_logo.png"
-    },
-    {
-      "club": "US Biskra",
-      "localisation": "Stade de Biskra, Biskra, Algérie",
-      "latitude": 34.8600,
-      "longitude": 5.7261,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/77/US_Biskra_logo.png"
-    },
-    {
-      "club": "ES Mostaganem",
-      "localisation": "Stade de Mostaganem, Mostaganem, Algérie",
-      "latitude": 35.9370,
-      "longitude": 0.0900,
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/4/45/ES_Mostaganem_logo.png"
-    }
-  ]
-  
+  {
+    "club": "JS Kabylie",
+    "localisation": "Stade du 1er Novembre 1954, Tizi Ouzou, Algérie",
+    "latitude": 36.7167,
+    "longitude": 4.0333,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9f/JS_Kabylie_logo.png"
+  },
+  {
+    "club": "Paradou AC",
+    "localisation": "Stade Omar Hamadi, Bologhine, Alger, Algérie",
+    "latitude": 36.812,
+    "longitude": 3.0581,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Paradou_AC_logo.png"
+  },
+  {
+    "club": "MC Alger",
+    "localisation": "Stade Ali Ammar, Douera, Alger, Algérie",
+    "latitude": 36.6817,
+    "longitude": 2.9628,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a0/MC_Alger_logo.png"
+  },
+  {
+    "club": "ES Sétif",
+    "localisation": "Stade 8 Mai 1945, Sétif, Algérie",
+    "latitude": 36.1917,
+    "longitude": 5.4167,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6f/ES_Sétif_logo.png"
+  },
+  {
+    "club": "USM Alger",
+    "localisation": "Stade Omar Hamadi, Bologhine, Alger, Algérie",
+    "latitude": 36.743,
+    "longitude": 3.078,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/USM_Alger_logo.png"
+  },
+  {
+    "club": "CS Constantine",
+    "localisation": "Stade Chahid-Hamlaoui, Constantine, Algérie",
+    "latitude": 36.365,
+    "longitude": 6.614,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7a/CS_Constantine_logo.png"
+  },
+  {
+    "club": "ASO Chlef",
+    "localisation": "Stade Mohamed Boumezrag, Chlef, Algérie",
+    "latitude": 36.1667,
+    "longitude": 1.3333,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/77/ASO_Chlef_logo.png"
+  },
+  {
+    "club": "USM Khenchela",
+    "localisation": "Stade Ahmed Benahmed, Khenchela, Algérie",
+    "latitude": 35.4358,
+    "longitude": 7.1433,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fd/USM_Khenchela_logo.png"
+  },
+  {
+    "club": "CR Belouizdad",
+    "localisation": "Stade du 20 Août 1955, Belouizdad, Alger, Algérie",
+    "latitude": 36.7489,
+    "longitude": 3.0731,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7f/CR_Belouizdad_logo.png"
+  },
+  {
+    "club": "MC Oran",
+    "localisation": "Stade Ahmed Zabana, Oran, Algérie",
+    "latitude": 35.697,
+    "longitude": -0.6333,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/MC_Oran_logo.png"
+  },
+  {
+    "club": "OAkbou",
+    "localisation": "Stade d'Oakbou, Oakbou, Algérie",
+    "latitude": 36.3667,
+    "longitude": 4.2833,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/18/Oakbou_logo.png"
+  },
+  {
+    "club": "JS Saoura",
+    "localisation": "Stade du 20 Août 1955, Bechar, Algérie",
+    "latitude": 31.6167,
+    "longitude": -2.2167,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/JS_Saoura_logo.png"
+  },
+  {
+    "club": "NC Magra",
+    "localisation": "Stade de Magra, Magra, Algérie",
+    "latitude": 35.4167,
+    "longitude": 5.4167,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/NC_Magra_logo.png"
+  },
+  {
+    "club": "MC El Bayadh",
+    "localisation": "Stade de Bayadh, Bayadh, Algérie",
+    "latitude": 33.6667,
+    "longitude": -0.7667,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7f/MC_El_Bayadh_logo.png"
+  },
+  {
+    "club": "US Biskra",
+    "localisation": "Stade de Biskra, Biskra, Algérie",
+    "latitude": 34.86,
+    "longitude": 5.7261,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/77/US_Biskra_logo.png"
+  },
+  {
+    "club": "ES Mostaganem",
+    "localisation": "Stade de Mostaganem, Mostaganem, Algérie",
+    "latitude": 35.937,
+    "longitude": 0.09,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/45/ES_Mostaganem_logo.png"
+  },
+  {
+    "club": "Coton Sport FC",
+    "localisation": "Stade Omnisport de Garoua, Garoua, Cameroun",
+    "latitude": 9.3007,
+    "longitude": 13.3941,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Coton_Sport_logo.png"
+  },
+  {
+    "club": "Union Douala",
+    "localisation": "Stade de la Réunification, Douala, Cameroun",
+    "latitude": 4.0511,
+    "longitude": 9.7679,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/16/Union_Douala_logo.png"
+  },
+  {
+    "club": "PWD Bamenda",
+    "localisation": "Stade Municipal, Bamenda, Cameroun",
+    "latitude": 5.9587,
+    "longitude": 10.1451,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/98/PWD_Bamenda_logo.png"
+  },
+  {
+    "club": "Dragon de Yaoundé",
+    "localisation": "Stade Omnisport Ahmadou Ahidjo, Yaoundé, Cameroun",
+    "latitude": 3.868,
+    "longitude": 11.5214,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/22/Dragon_de_Yaounde_logo.png"
+  },
+  {
+    "club": "Canon Yaoundé",
+    "localisation": "Stade Omnisport Ahmadou Ahidjo, Yaoundé, Cameroun",
+    "latitude": 3.868,
+    "longitude": 11.5214,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Canon_Yaounde_logo.png"
+  },
+  {
+    "club": "AS FAN",
+    "localisation": "Stade Général Seyni Kountché, Niamey, Niger",
+    "latitude": 13.5116,
+    "longitude": 2.1254,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4b/AS_FAN_logo.png"
+  },
+  {
+    "club": "Sahel SC",
+    "localisation": "Stade Général Seyni Kountché, Niamey, Niger",
+    "latitude": 13.5116,
+    "longitude": 2.1254,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Sahel_SC_logo.png"
+  },
+  {
+    "club": "Olympic FC",
+    "localisation": "Stade Municipal de Niamey, Niamey, Niger",
+    "latitude": 13.5071,
+    "longitude": 2.1006,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Olympic_FC_logo.png"
+  },
+  {
+    "club": "US GN",
+    "localisation": "Stade Général Seyni Kountché, Niamey, Niger",
+    "latitude": 13.5116,
+    "longitude": 2.1254,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1a/US_GN_logo.png"
+  },
+  {
+    "club": "ASC Jaraaf",
+    "localisation": "Stade Demba Diop, Dakar, Sénégal",
+    "latitude": 14.6937,
+    "longitude": -17.4441,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d2/ASC_Jaraaf_logo.png"
+  },
+  {
+    "club": "Casa Sports",
+    "localisation": "Stade Aline Sitoé Diatta, Ziguinchor, Sénégal",
+    "latitude": 12.5641,
+    "longitude": -16.2719,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/3/34/Casa_Sports_logo.png"
+  },
+  {
+    "club": "Diambars FC",
+    "localisation": "Stade Fodé Wade, Saly, Sénégal",
+    "latitude": 14.4412,
+    "longitude": -17.0014,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/80/Diambars_FC_logo.png"
+  },
+  {
+    "club": "Teungueth FC",
+    "localisation": "Stade Ngalandou Diouf, Rufisque, Sénégal",
+    "latitude": 14.7215,
+    "longitude": -17.2734,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Teungueth_FC_logo.png"
+  },
+  {
+    "club": "ASEC Mimosas",
+    "localisation": "Stade Félix Houphouët-Boigny, Abidjan, Côte d'Ivoire",
+    "latitude": 5.325,
+    "longitude": -3.978,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/ASEC_Mimosas_logo.png"
+  },
+  {
+    "club": "Africa Sports",
+    "localisation": "Stade Robert Champroux, Abidjan, Côte d'Ivoire",
+    "latitude": 5.3097,
+    "longitude": -4.0199,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/57/Africa_Sports_logo.png"
+  },
+  {
+    "club": "FC San Pédro",
+    "localisation": "Stade Auguste Denise, San Pédro, Côte d'Ivoire",
+    "latitude": 4.7463,
+    "longitude": -6.6363,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/FC_San_Pedro_logo.png"
+  },
+  {
+    "club": "SOA (Société Omnisports de l'Armée)",
+    "localisation": "Stade Général Guei Robert, Yamoussoukro, Côte d'Ivoire",
+    "latitude": 6.8276,
+    "longitude": -5.2893,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/43/SOA_logo.png"
+  },
+  {
+    "club": "Simba SC",
+    "localisation": "Benjamin Mkapa Stadium, Dar es Salaam, Tanzanie",
+    "latitude": -6.8915,
+    "longitude": 39.236,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/66/Simba_SC_logo.png"
+  },
+  {
+    "club": "Young Africans SC",
+    "localisation": "Benjamin Mkapa Stadium, Dar es Salaam, Tanzanie",
+    "latitude": -6.8915,
+    "longitude": 39.236,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/56/Young_Africans_logo.png"
+  },
+  {
+    "club": "Azam FC",
+    "localisation": "Chamazi Stadium, Dar es Salaam, Tanzanie",
+    "latitude": -6.8476,
+    "longitude": 39.2551,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/9/91/Azam_FC_logo.png"
+  },
+  {
+    "club": "Kagera Sugar FC",
+    "localisation": "Kaitaba Stadium, Bukoba, Tanzanie",
+    "latitude": -1.331,
+    "longitude": 31.7997,
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kagera_Sugar_FC_logo.png"
+  }
+]
