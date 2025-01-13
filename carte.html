@@ -23,6 +23,11 @@
             border: 1px solid #333;
             box-shadow: 0 0 5px rgba(0,0,0,0.3);
         }
+            /* Supprime le cadre par défaut lors de la sélection */
+    .leaflet-container a, .leaflet-container a:focus, 
+    .leaflet-container path, .leaflet-container path:focus {
+        outline: none;
+    }
     </style>
 </head>
 <body>
@@ -53,61 +58,68 @@
         }).addTo(map);
 
         // Charger les frontières des pays via GeoJSON
-        $.getJSON('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json', function(data) {
-            L.geoJSON(data, {
-                style: {
-                    weight: 1,
-                    color: '#000',
-                    opacity: 1,
-                    fillOpacity: 0
-                },
-                onEachFeature: function (feature, layer) {
-                    if (feature.properties && feature.properties.name) {
-                        layer.on({
-                            mouseover: function(e) {
-                                var tooltip = L.tooltip({
-                                    direction: 'center',
-                                    className: 'country-tooltip'
-                                })
-                                .setContent(feature.properties.name)
-                                .setLatLng(e.latlng);
-                                e.target.bindTooltip(tooltip).openTooltip();
+        var countriesLayer = L.geoJSON(null, {
+            style: {
+                weight: 1,
+                color: '#000',
+                fillOpacity: 0
+            },
+            onEachFeature: function(feature, layer) {
+                if (feature.properties && feature.properties.name) {
+                    layer.on({
+                        mouseover: function(e) {
+                            var tooltip = L.tooltip({
+                                direction: 'center',
+                                className: 'country-tooltip'
+                            })
+                            .setContent(feature.properties.name)
+                            .setLatLng(e.latlng);
+                            e.target.bindTooltip(tooltip).openTooltip();
 
-                                // Style au survol
-                                e.target.setStyle({
-                                    weight: 2,
-                                    color: '#FF6347',
-                                    fillColor: '#FF6347',
-                                    fillOpacity: 0.1
-                                });
-                            },
-                            mouseout: function(e) {
-                                e.target.closeTooltip();
-                                e.target.unbindTooltip();
-                                e.target.setStyle({
-                                    weight: 1,
-                                    color: '#000',
-                                    fillColor: '#000',
-                                    fillOpacity: 0
-                                });
-                            },
-                            click: function(e) {
-                                var tooltip = L.tooltip({
-                                    direction: 'center',
-                                    className: 'country-tooltip'
-                                })
-                                .setContent(feature.properties.name)
-                                .setLatLng(e.latlng);
-                                e.target.bindTooltip(tooltip).openTooltip();
-                            }
-                        });
-                    }
+                            // Appliquer un style temporaire au survol
+                            e.target.setStyle({
+                                weight: 2,
+                                color: '#FF6347',
+                                fillColor: '#FF6347',
+                                fillOpacity: 0.1
+                            });
+                        },
+                        mouseout: function(e) {
+                            e.target.closeTooltip();
+                            e.target.unbindTooltip();
+
+                            // Restaurer le style par défaut
+                            e.target.setStyle({
+                                weight: 1,
+                                color: '#000',
+                                fillColor: '#000',
+                                fillOpacity: 0
+                            });
+                        },
+                        click: function(e) {
+                            // Modifier le style du cadre sur clic
+                            countriesLayer.eachLayer(function(l) {
+                                countriesLayer.resetStyle(l); // Réinitialiser les autres couches
+                            });
+                            e.target.setStyle({
+                                weight: 3,
+                                color: '#00FF00', // Couleur du cadre
+                                fillColor: '#00FF00', // Couleur de remplissage
+                                fillOpacity: 0.3 // Opacité de remplissage
+                            });
+                        }
+                    });
                 }
-            }).addTo(map);
+            }
+        });
+
+        // Charger les données GeoJSON des pays
+        $.getJSON('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json', function(data) {
+            countriesLayer.addData(data).addTo(map);
         });
 
         // Charger les données JSON des clubs
-        $.getJSON('clubs.json', function(data) {  
+        $.getJSON('clubs.json', function(data) {
             data.forEach(function(club) {
                 var marker = L.marker([club.latitude, club.longitude]).addTo(map);
                 marker.bindPopup(
